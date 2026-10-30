@@ -25,7 +25,9 @@ def main():
             elif choice == "5":
                 print("게임을 종료합니다.")
                 break
-            elif choice in ("3", "4"):
+            elif choice == "3":
+                game.list_quizzes()
+            elif choice == "4":
                 print("해당 기능은 다음 단계에서 구현합니다.")
             else:
                 print("잘못된 입력입니다. 1~5 사이의 숫자를 입력하세요.")
