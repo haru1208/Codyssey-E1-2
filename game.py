@@ -30,6 +30,8 @@ class QuizGame:
                 2
             )
         ]
+        self.high_score = 0
+        
 
     def play(self):
         score = 0
@@ -60,7 +62,13 @@ class QuizGame:
                 print(f"오답입니다. 정답은 {quiz.answer}번입니다.")
 
         print(f"\n최종 점수: {score}/{len(self.quizzes)}")
+
+        if score > self.high_score:
+            self.high_score = score
+            print("새로운 최고 점수를 달성했습니다!")
+
         return score
+
 
     def add_quiz(self):
         print("\n=== 새로운 퀴즈 추가 ===")
@@ -113,4 +121,8 @@ class QuizGame:
             print(f"{number}. {quiz.question}")
 
         print(f"\n전체 문제 수: {len(self.quizzes)}")
+
+    def show_score(self):
+        print("\n=== 최고 점수 확인 ===")
+        print(f"현재 최고 점수: {self.high_score}점")    
 
