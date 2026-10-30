@@ -79,3 +79,8 @@ Python과 Git의 기초 개념을 복습하기 위해 제작한 터미널 기반
 ## 9. GitHub 저장소
 
 https://github.com/haru1208/Codyssey-E1-2
+
+
+## Git 복제 실습
+
+이 프로젝트는 GitHub에서 clone한 복제본에서도 수정하고 관리할 수 있습니다.
