@@ -20,10 +20,12 @@ def main():
 
             if choice == "1":
                 game.play()
+            elif choice == "2":
+                game.add_quiz()
             elif choice == "5":
                 print("게임을 종료합니다.")
                 break
-            elif choice in ("2", "3", "4"):
+            elif choice in ("3", "4"):
                 print("해당 기능은 다음 단계에서 구현합니다.")
             else:
                 print("잘못된 입력입니다. 1~5 사이의 숫자를 입력하세요.")
