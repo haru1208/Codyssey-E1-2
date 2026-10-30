@@ -1,5 +1,5 @@
 from quiz import Quiz
-
+from storage import load_state, save_state
 
 class QuizGame:
     def __init__(self):
@@ -31,6 +31,22 @@ class QuizGame:
             )
         ]
         self.high_score = 0
+        saved = load_state()
+
+        if saved is not None:
+            try:
+                saved_quizzes = [
+                    Quiz(item["question"], item["choices"], item["answer"])
+                    for item in saved["quizzes"]
+                ]
+                saved_high_score = saved["high_score"]
+
+                self.quizzes = saved_quizzes
+                self.high_score = saved_high_score
+
+            except (KeyError, TypeError, ValueError):
+                print("경고: 저장 데이터 형식이 잘못되어 기본값을 사용합니다.")
+
         
 
     def play(self):
@@ -66,7 +82,7 @@ class QuizGame:
         if score > self.high_score:
             self.high_score = score
             print("새로운 최고 점수를 달성했습니다!")
-
+        save_state(self.quizzes, self.high_score)
         return score
 
 
@@ -108,7 +124,10 @@ class QuizGame:
         new_quiz = Quiz(question, choices, answer)
         self.quizzes.append(new_quiz)
 
-        print("새로운 퀴즈가 추가됐습니다!")
+        if save_state(self.quizzes, self.high_score):
+            print("새로운 퀴즈가 추가되고 저장됐습니다!")
+        else:
+            print("퀴즈는 추가됐지만 파일 저장에 실패했습니다.")
 
     def list_quizzes(self):
         print("\n=== 등록된 퀴즈 목록 ===")
