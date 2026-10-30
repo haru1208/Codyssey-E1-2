@@ -84,3 +84,30 @@ https://github.com/haru1208/Codyssey-E1-2
 ## Git 복제 실습
 
 이 프로젝트는 GitHub에서 clone한 복제본에서도 수정하고 관리할 수 있습니다.
+
+
+## 실행 화면 (Screenshots)
+
+기본 퀴즈는 10문제로 구성되어 있습니다.
+실행 화면에서는 퀴즈 추가 기능을 테스트하기 위해 1문제를 추가하여 총 11문제를 사용했습니다.
+
+### 1. Git 커밋 기록
+![Git Commit History](screenshots/01_git_commit_history.png)
+
+### 2. 개발 환경
+![Development Environment](screenshots/02_development_environment.png)
+
+### 3. 메인 메뉴
+![Main Menu](screenshots/03_main_menu.png)
+
+### 4. 퀴즈 추가
+![Add Quiz](screenshots/04_add_quiz.png)
+
+### 5. 퀴즈 목록
+![Quiz List](screenshots/05_quiz_list.png)
+
+### 6. 퀴즈 풀이
+![Quiz Play](screenshots/06_quiz_play.png)
+
+### 7. 점수 확인
+![Quiz Score](screenshots/07_score.png)
