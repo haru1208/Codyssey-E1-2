@@ -13,10 +13,12 @@ def main():
         print("3. 퀴즈 목록")
         print("4. 점수 확인")
         print("5. 종료")
+        print("6. 퀴즈 삭제")
+        print("7. 점수 히스토리")
         print("================================")
 
         try:
-            choice = input("메뉴 선택 (1~5): ").strip()
+            choice = input("메뉴 선택 (1~7): ").strip()
 
             if choice == "1":
                 game.play()
@@ -29,8 +31,12 @@ def main():
                 game.list_quizzes()
             elif choice == "4":
                 game.show_score()
+            elif choice == "6":
+                game.delete_quiz()
+            elif choice == "7":
+                game.show_history()        
             else:
-                print("잘못된 입력입니다. 1~5 사이의 숫자를 입력하세요.")
+                print("잘못된 입력입니다. 1~7 사이의 숫자를 입력하세요.")
 
         except (KeyboardInterrupt, EOFError):
             print("\n입력이 종료되어 프로그램을 마칩니다.")
