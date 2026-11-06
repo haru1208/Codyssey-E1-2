@@ -309,7 +309,11 @@ class QuizGame:
 
     def show_score(self):
         print("\n=== 최고 점수 확인 ===")
-        print(f"현재 최고 점수: {self.high_score}점 / 100점")
+
+        if not self.history and self.high_score == 0:
+            print("아직 퀴즈를 풀지 않았습니다.")
+        else:
+            print(f"현재 최고 점수: {self.high_score}점 / 100점")
 
     def show_history(self):
         print("\n=== 점수 히스토리 ===")
